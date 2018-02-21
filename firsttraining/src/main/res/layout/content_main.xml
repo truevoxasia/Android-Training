@@ -44,8 +44,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="15"
+                android:focusable="false"
                 android:hint="@string/startdate"
-                android:inputType="datetime"
+                android:inputType="none"
                 android:maxEms="1" />
 
             <com.app.infideap.stylishwidget.view.AEditText
@@ -55,7 +56,8 @@
                 android:layout_height="wrap_content"
                 android:ems="15"
                 android:hint="@string/enddate"
-                android:inputType="datetime"
+                android:inputType="none"
+                android:focusable="false"
                 android:maxEms="1" />
 
             <com.app.infideap.stylishwidget.view.AEditText
@@ -64,6 +66,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="15"
+                android:inputType="numberDecimal"
                 android:hint="@string/version"
                 android:maxEms="1" />
         </LinearLayout>
