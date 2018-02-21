@@ -1,2 +1,2 @@
-include ':firsttraining', ':second training'
+include ':first training', ':second training'
 project(':second training').projectDir = new File('secondtraining')

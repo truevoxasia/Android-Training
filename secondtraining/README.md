@@ -1,10 +1,13 @@
-# First Training
+# Second Training
 
 ## Objectives
-- Learn how to manipulate view's touch/interaction.
-- Retrieve view's value.
+- Learn how to create SQLite Database using GreenDao.
+- Store data to database.
+- Reset view's value.
+- Learn how to open & view SQLite database
 
 ## Tasks
-- Make Date/tTme input show Date/Time picker instead of keyboard.
-- 'Version' EditText use number keypad.
-- Show dialog after save, and display all value in dialog. 
+- Declare project name, code, start date & end date variable in project class.
+- Create SQLite Table ProjectTbl using GreenDao.
+- Clear view's value & pop up previous training dialog after store data success.
+- Check data in SQLite database.
