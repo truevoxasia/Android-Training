@@ -9,5 +9,5 @@
 ## Tasks
 - Declare **project name, code, start date & end date** variable in **Project class**.
 - Create SQLite **'ProjectTable'** Table using **GreenDao**.
-- **Clear view's value** & pop up previous training dialog after store data success.
+- **Clear view's value** & pop up dialog after store data success.
 - Check data in SQLite database.
