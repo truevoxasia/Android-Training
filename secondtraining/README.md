@@ -7,7 +7,7 @@
 - Learn how to open & view SQLite database
 
 ## Tasks
-- Declare project name, code, start date & end date variable in project class.
-- Create SQLite 'ProjectTable' Table using GreenDao.
-- Clear view's value & pop up previous training dialog after store data success.
+- Declare **project name, code, start date & end date** variable in **Project class**.
+- Create SQLite **'ProjectTable'** Table using **GreenDao**.
+- **Clear view's value** & pop up previous training dialog after store data success.
 - Check data in SQLite database.
