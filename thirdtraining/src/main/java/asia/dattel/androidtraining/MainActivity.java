@@ -1,0 +1,78 @@
+package asia.dattel.androidtraining;
+
+import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
+
+import asia.dattel.androidtraining.entity.Project;
+
+public class MainActivity extends AppCompatActivity implements
+        ProjectAddFragment.OnFragmentInteractionListerner {
+
+
+    ViewPager viewPager;
+    private BottomNavigationView bottomNavigationView;
+    private Fragment[] fragments;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+
+        viewPager = findViewById(R.id.viewPager);
+        bottomNavigationView = findViewById(R.id.bottomNavigationView);
+
+        fragments = new Fragment[]{
+                ProjectAddFragment.newInstance(),
+                ProjectListFragment.newInstance()
+        };
+        viewPager.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {
+            @Override
+            public Fragment getItem(int position) {
+
+                if (position < fragments.length) {
+                    return fragments[position];
+                }
+                return new Fragment();
+
+            }
+
+            @Override
+            public int getCount() {
+                return fragments.length;
+            }
+        });
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(
+                new BottomNavigationView.OnNavigationItemSelectedListener() {
+                    @Override
+                    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                        switch (item.getItemId()) {
+                            case R.id.action_add:
+                                viewPager.setCurrentItem(0);
+                                return true;
+                            case R.id.action_list:
+                                viewPager.setCurrentItem(1);
+                                return true;
+                        }
+                        return false;
+                    }
+                });
+    }
+
+
+    // Todo : Add code here, to perform update UI on RecyclerView
+    @Override
+    public void onProjectAddInteraction(Project project) {
+        Fragment currentFragment = fragments[viewPager.getCurrentItem()];
+    }
+}
