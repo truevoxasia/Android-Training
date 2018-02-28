@@ -56,6 +56,15 @@ public class ProjectListFragment extends Fragment {
             throw new RuntimeException(context.toString()
                     + " must implement OnListFragmentInteractionListener");
         }
+
+
+    }
+
+
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+
     }
 
     @Override
@@ -66,5 +75,6 @@ public class ProjectListFragment extends Fragment {
     public void updateList(Project project){
         projects.add(0, project);
         recyclerView.getAdapter().notifyItemInserted(0);
+        recyclerView.scrollToPosition(0);
     }
 }

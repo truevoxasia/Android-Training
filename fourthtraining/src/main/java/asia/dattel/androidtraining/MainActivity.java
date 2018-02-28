@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity implements
 
     @Override
     public void onProjectAddInteraction(Project project) {
-        Fragment fragment = fragments[viewPager.getCurrentItem()];
+        Fragment fragment = fragments[1];
         if (fragment instanceof ProjectListFragment){
             ((ProjectListFragment) fragment).updateList(project);
         }
