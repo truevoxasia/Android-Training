@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="asia.dattel.androidtraining.MainActivity">
+    <item
+        android:id="@+id/action_add"
+        android:orderInCategory="100"
+        android:title="@string/add"
+        android:icon="@drawable/ic_add_black_24dp"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_list"
+        android:orderInCategory="100"
+        android:title="@string/list"
+        android:icon="@drawable/ic_list_black_24dp"
+        app:showAsAction="never" />
+</menu>
