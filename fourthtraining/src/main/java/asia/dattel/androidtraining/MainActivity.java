@@ -70,9 +70,11 @@ public class MainActivity extends AppCompatActivity implements
     }
 
 
-    // Todo : Add code here, to perform update UI on RecyclerView
     @Override
     public void onProjectAddInteraction(Project project) {
-        Fragment fragment = fragments[1];
+        Fragment fragment = fragments[viewPager.getCurrentItem()];
+        if (fragment instanceof ProjectListFragment){
+            ((ProjectListFragment) fragment).updateList(project);
+        }
     }
 }
