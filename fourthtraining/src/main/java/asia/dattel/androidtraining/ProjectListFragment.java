@@ -60,13 +60,6 @@ public class ProjectListFragment extends Fragment {
 
     }
 
-
-    @Override
-    public void setUserVisibleHint(boolean isVisibleToUser) {
-        super.setUserVisibleHint(isVisibleToUser);
-
-    }
-
     @Override
     public void onDetach() {
         super.onDetach();
