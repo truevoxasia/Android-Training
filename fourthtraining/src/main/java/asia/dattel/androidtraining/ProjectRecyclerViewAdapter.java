@@ -55,7 +55,7 @@ public class ProjectRecyclerViewAdapter extends RecyclerView.Adapter<ProjectRecy
                 public void onClick(View view) {
                     // Todo : Add upload Code here
                     // API : https://android-training-7d330.firebaseio.com/projects.json
-                    // Method : GET
+                    // Method : POST
 
                 }
             });
