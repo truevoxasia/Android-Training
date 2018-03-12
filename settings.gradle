@@ -1,4 +1,5 @@
-include ':first training', ':second training', ':third training', ':fourth training'
+include ':first training', ':second training', ':third training', ':fourth training', ':fifth training'
 project(':second training').projectDir = new File('secondtraining')
 project(':third training').projectDir = new File('thirdtraining')
 project(':fourth training').projectDir = new File('fourthtraining')
+project(':fifth training').projectDir = new File('fifthtraining')

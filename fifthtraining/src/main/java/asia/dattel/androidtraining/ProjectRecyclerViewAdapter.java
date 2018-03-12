@@ -15,11 +15,10 @@ import asia.dattel.androidtraining.entity.Project;
 public class ProjectRecyclerViewAdapter extends RecyclerView.Adapter<ProjectRecyclerViewAdapter.ViewHolder> {
 
     private final List<Project> mValues;
-    private final ProjectListFragment.OnFragmentInteractionListener mListener;
 
-    public ProjectRecyclerViewAdapter(List<Project> projects, ProjectListFragment.OnFragmentInteractionListener listener) {
+
+    public ProjectRecyclerViewAdapter(List<Project> projects) {
         mValues = projects;
-        mListener = listener;
 
     }
 
@@ -54,8 +53,10 @@ public class ProjectRecyclerViewAdapter extends RecyclerView.Adapter<ProjectRecy
             holder.mView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    // Todo : Add upload Code here
+                    // API : https://android-training-7d330.firebaseio.com/projects.json
+                    // Method : GET
 
-                    mListener.onUploadDataInteraction(holder.mItem);
                 }
             });
 

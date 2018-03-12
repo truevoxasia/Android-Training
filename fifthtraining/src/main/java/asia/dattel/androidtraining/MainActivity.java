@@ -13,8 +13,7 @@ import android.view.MenuItem;
 import asia.dattel.androidtraining.entity.Project;
 
 public class MainActivity extends AppCompatActivity implements
-        ProjectAddFragment.OnFragmentInteractionListerner,
-        ProjectListFragment.OnFragmentInteractionListener{
+        ProjectAddFragment.OnFragmentInteractionListerner {
 
 
     ViewPager viewPager;
@@ -25,7 +24,7 @@ public class MainActivity extends AppCompatActivity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
 
@@ -36,6 +35,7 @@ public class MainActivity extends AppCompatActivity implements
                 ProjectAddFragment.newInstance(),
                 ProjectListFragment.newInstance()
         };
+
         viewPager.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {
             @Override
             public Fragment getItem(int position) {
@@ -77,13 +77,5 @@ public class MainActivity extends AppCompatActivity implements
         if (fragment instanceof ProjectListFragment){
             ((ProjectListFragment) fragment).updateList(project);
         }
-    }
-
-    // Todo : Add upload Code here
-    // API : https://android-training-7d330.firebaseio.com/projects.json
-    // Method : POST
-    @Override
-    public void onUploadDataInteraction(Project mItem) {
-
     }
 }
