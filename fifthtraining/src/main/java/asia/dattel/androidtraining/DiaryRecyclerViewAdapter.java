@@ -10,22 +10,22 @@ import com.app.infideap.stylishwidget.view.AButton;
 
 import java.util.List;
 
-import asia.dattel.androidtraining.entity.Project;
+import asia.dattel.androidtraining.entity.Diary;
 
-public class ProjectRecyclerViewAdapter extends RecyclerView.Adapter<ProjectRecyclerViewAdapter.ViewHolder> {
+public class DiaryRecyclerViewAdapter extends RecyclerView.Adapter<DiaryRecyclerViewAdapter.ViewHolder> {
 
-    private final List<Project> mValues;
+    private final List<Diary> mValues;
 
 
-    public ProjectRecyclerViewAdapter(List<Project> projects) {
-        mValues = projects;
+    public DiaryRecyclerViewAdapter(List<Diary> diaries) {
+        mValues = diaries;
 
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.fragment_project, parent, false);
+                .inflate(R.layout.fragment_diary, parent, false);
         return new ViewHolder(view);
     }
 
@@ -75,7 +75,7 @@ public class ProjectRecyclerViewAdapter extends RecyclerView.Adapter<ProjectRecy
         public final TextView endDateTextView;
         public final TextView versionTextView;
         public final AButton actionButton;
-        public Project mItem;
+        public Diary mItem;
 
         public ViewHolder(View view) {
             super(view);

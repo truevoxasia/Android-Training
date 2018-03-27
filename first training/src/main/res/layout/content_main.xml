@@ -20,56 +20,40 @@
             android:layout_gravity="center_horizontal"
             android:orientation="vertical">
 
-            <com.app.infideap.stylishwidget.view.AEditText
-                android:id="@+id/editText_project_name"
+            <EditText
+                android:id="@+id/editText_title"
                 style="@style/EditText.RoundBorder"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="15"
-                android:hint="@string/projectname"
+                android:hint="@string/title"
                 android:maxEms="1" />
 
-            <com.app.infideap.stylishwidget.view.AEditText
-                android:id="@+id/editText_code"
+
+            <EditText
+                android:id="@+id/editText_date"
+                style="@style/EditText.RoundBorder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="15"
+                android:hint="@string/date"
+                android:inputType="datetime"
+                android:maxEms="1" />
+
+
+
+            <EditText
+                android:id="@+id/editText_content"
                 style="@style/EditText.RoundBorder"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="15"
                 android:hint="@string/code"
                 android:maxEms="1" />
-
-            <com.app.infideap.stylishwidget.view.AEditText
-                android:id="@+id/editText_start_date"
-                style="@style/EditText.RoundBorder"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="15"
-                android:hint="@string/startdate"
-                android:inputType="datetime"
-                android:maxEms="1" />
-
-            <com.app.infideap.stylishwidget.view.AEditText
-                android:id="@+id/editText_end_date"
-                style="@style/EditText.RoundBorder"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="15"
-                android:hint="@string/enddate"
-                android:inputType="datetime"
-                android:maxEms="1" />
-
-            <com.app.infideap.stylishwidget.view.AEditText
-                android:id="@+id/editText_version"
-                style="@style/EditText.RoundBorder"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="15"
-                android:hint="@string/version"
-                android:maxEms="1" />
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 
-    <com.app.infideap.stylishwidget.view.AButton
+    <Button
         android:id="@+id/button_save"
         android:text="@string/save"
         style="@style/Button.Success.Fill"

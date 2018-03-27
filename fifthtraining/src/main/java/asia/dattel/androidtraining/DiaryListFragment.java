@@ -13,43 +13,43 @@ import android.view.ViewGroup;
 import java.util.List;
 
 import asia.dattel.androidtraining.entity.DaoSession;
-import asia.dattel.androidtraining.entity.Project;
+import asia.dattel.androidtraining.entity.Diary;
 import asia.dattel.androidtraining.entity.ProjectDao;
 
-public class ProjectListFragment extends Fragment {
-    private List<Project> projects;
+public class DiaryListFragment extends Fragment {
+    private List<Diary> diaries;
     private DaoSession session;
     private RecyclerView recyclerView;
 
-    public ProjectListFragment() {
+    public DiaryListFragment() {
     }
 
-    public static ProjectListFragment newInstance() {
-        return new ProjectListFragment();
+    public static DiaryListFragment newInstance() {
+        return new DiaryListFragment();
     }
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_project_list, container, false);
+        View view = inflater.inflate(R.layout.fragment_diary_list, container, false);
 
         Context context = view.getContext();
         recyclerView = (RecyclerView) view;
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
 
-        projects = session.getProjectDao().queryBuilder().orderDesc(
+        diaries = session.getProjectDao().queryBuilder().orderDesc(
                 ProjectDao.Properties.ProjectId
         ).list();
         recyclerView.addItemDecoration(new DividerItemDecoration(context,
                 DividerItemDecoration.VERTICAL));
-        recyclerView.setAdapter(new ProjectRecyclerViewAdapter(projects));
+        recyclerView.setAdapter(new DiaryRecyclerViewAdapter(diaries));
         return view;
     }
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if (context instanceof ProjectAddFragment.OnFragmentInteractionListerner) {
+        if (context instanceof DiaryAddFragment.OnFragmentInteractionListerner) {
             session = ((BaseApplication) getActivity().getApplication()).getSession();
 
         } else {
@@ -65,8 +65,8 @@ public class ProjectListFragment extends Fragment {
         super.onDetach();
     }
 
-    public void updateList(Project project){
-        projects.add(0, project);
+    public void updateList(Diary diary){
+        diaries.add(0, diary);
         recyclerView.getAdapter().notifyItemInserted(0);
         recyclerView.scrollToPosition(0);
     }

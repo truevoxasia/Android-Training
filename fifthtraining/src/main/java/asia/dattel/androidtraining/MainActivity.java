@@ -10,10 +10,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
-import asia.dattel.androidtraining.entity.Project;
+import asia.dattel.androidtraining.entity.Diary;
 
 public class MainActivity extends AppCompatActivity implements
-        ProjectAddFragment.OnFragmentInteractionListerner {
+        DiaryAddFragment.OnFragmentInteractionListerner {
 
 
     ViewPager viewPager;
@@ -32,8 +32,8 @@ public class MainActivity extends AppCompatActivity implements
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
 
         fragments = new Fragment[]{
-                ProjectAddFragment.newInstance(),
-                ProjectListFragment.newInstance()
+                DiaryAddFragment.newInstance(),
+                DiaryListFragment.newInstance()
         };
 
         viewPager.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {
@@ -72,10 +72,10 @@ public class MainActivity extends AppCompatActivity implements
 
 
     @Override
-    public void onProjectAddInteraction(Project project) {
+    public void onProjectAddInteraction(Diary diary) {
         Fragment fragment = fragments[1];
-        if (fragment instanceof ProjectListFragment){
-            ((ProjectListFragment) fragment).updateList(project);
+        if (fragment instanceof DiaryListFragment){
+            ((DiaryListFragment) fragment).updateList(diary);
         }
     }
 }

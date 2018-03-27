@@ -20,9 +20,9 @@ import java.util.Calendar;
 import java.util.Locale;
 
 import asia.dattel.androidtraining.entity.DaoSession;
-import asia.dattel.androidtraining.entity.Project;
+import asia.dattel.androidtraining.entity.Diary;
 
-public class ProjectAddFragment extends Fragment {
+public class DiaryAddFragment extends Fragment {
 
     private Calendar startDateCalendar = Calendar.getInstance();
     private Calendar endDateCalendar = Calendar.getInstance();
@@ -37,19 +37,19 @@ public class ProjectAddFragment extends Fragment {
     private DaoSession session;
     private OnFragmentInteractionListerner mListener;
 
-    public ProjectAddFragment() {
+    public DiaryAddFragment() {
     }
 
 
-    public static ProjectAddFragment newInstance() {
-        return new ProjectAddFragment();
+    public static DiaryAddFragment newInstance() {
+        return new DiaryAddFragment();
     }
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_project_add, container, false);
+        return inflater.inflate(R.layout.fragment_diary_add, container, false);
     }
 
     @Override
@@ -94,22 +94,22 @@ public class ProjectAddFragment extends Fragment {
     }
 
     private void storeIntoDb() {
-        final Project project = new Project();
-        project.projectName = projectEditText.getText().toString();
-        project.code = codeEditText.getText().toString();
-        project.startDate = startDateEditText.getText().toString();
-        project.endDate = endDateEditText.getText().toString();
-        project.version = Long.parseLong(versionEditText.getText().toString());
+        final Diary diary = new Diary();
+        diary.projectName = projectEditText.getText().toString();
+        diary.code = codeEditText.getText().toString();
+        diary.startDate = startDateEditText.getText().toString();
+        diary.endDate = endDateEditText.getText().toString();
+        diary.version = Long.parseLong(versionEditText.getText().toString());
 
-        if (session.getProjectDao().insert(project) != -1) {
+        if (session.getProjectDao().insert(diary) != -1) {
 
-            mListener.onProjectAddInteraction(project);
+            mListener.onProjectAddInteraction(diary);
             new AlertDialog.Builder(getContext())
                     .setTitle(R.string.saved)
                     .setMessage(
                             String.format(
                                     Locale.getDefault(),
-                                    "Project Name : %s\n" +
+                                    "Diary Name : %s\n" +
                                             "Code : %s\n" +
                                             "Start Date : %s\n" +
                                             "End Date : %s\n" +
@@ -203,6 +203,6 @@ public class ProjectAddFragment extends Fragment {
 
     public interface OnFragmentInteractionListerner {
 
-        void onProjectAddInteraction(Project project);
+        void onProjectAddInteraction(Diary diary);
     }
 }
