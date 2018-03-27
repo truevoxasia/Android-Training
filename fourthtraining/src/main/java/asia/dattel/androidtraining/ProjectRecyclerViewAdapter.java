@@ -54,7 +54,9 @@ public class ProjectRecyclerViewAdapter extends RecyclerView.Adapter<ProjectRecy
             holder.mView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
+                    // Todo : Add upload Code here
+                    // API : https://android-training-7d330.firebaseio.com/projects.json
+                    // Method : POST
                     mListener.onUploadDataInteraction(holder.mItem);
                 }
             });
