@@ -13,7 +13,7 @@ import android.view.MenuItem;
 import asia.dattel.androidtraining.entity.Project;
 
 public class MainActivity extends AppCompatActivity implements
-        ProjectAddFragment.OnFragmentInteractionListerner {
+        DiaryAddFragment.OnFragmentInteractionListerner {
 
 
     ViewPager viewPager;
@@ -32,8 +32,8 @@ public class MainActivity extends AppCompatActivity implements
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
 
         fragments = new Fragment[]{
-                ProjectAddFragment.newInstance(),
-                ProjectListFragment.newInstance()
+                DiaryAddFragment.newInstance(),
+                DiaryListFragment.newInstance()
         };
         viewPager.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {
             @Override

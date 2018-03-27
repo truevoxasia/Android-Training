@@ -20,6 +20,7 @@ public class ProjectListFragment extends Fragment {
     private List<Project> projects;
     private DaoSession session;
     private RecyclerView recyclerView;
+    private OnFragmentInteractionListener mListener;
 
     public ProjectListFragment() {
     }
@@ -43,7 +44,7 @@ public class ProjectListFragment extends Fragment {
         ).list();
         recyclerView.addItemDecoration(new DividerItemDecoration(context,
                 DividerItemDecoration.VERTICAL));
-        recyclerView.setAdapter(new ProjectRecyclerViewAdapter(projects));
+        recyclerView.setAdapter(new ProjectRecyclerViewAdapter(projects, mListener));
         return view;
     }
     @Override
@@ -51,6 +52,7 @@ public class ProjectListFragment extends Fragment {
         super.onAttach(context);
         if (context instanceof ProjectAddFragment.OnFragmentInteractionListerner) {
             session = ((BaseApplication) getActivity().getApplication()).getSession();
+            mListener = (OnFragmentInteractionListener)context;
 
         } else {
             throw new RuntimeException(context.toString()
@@ -69,5 +71,11 @@ public class ProjectListFragment extends Fragment {
         projects.add(0, project);
         recyclerView.getAdapter().notifyItemInserted(0);
         recyclerView.scrollToPosition(0);
+    }
+
+
+    public interface OnFragmentInteractionListener {
+
+        void onUploadDataInteraction(Project mItem);
     }
 }

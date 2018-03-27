@@ -15,14 +15,14 @@ import java.util.List;
 
 import asia.dattel.androidtraining.entity.Project;
 
-public class ProjectListFragment extends Fragment {
+public class DiaryListFragment extends Fragment {
     private List<Project> projects;
 
-    public ProjectListFragment() {
+    public DiaryListFragment() {
     }
 
-    public static ProjectListFragment newInstance() {
-        return new ProjectListFragment();
+    public static DiaryListFragment newInstance() {
+        return new DiaryListFragment();
     }
 
 
@@ -38,7 +38,7 @@ public class ProjectListFragment extends Fragment {
         projects = new ArrayList<>();
         recyclerView.addItemDecoration(new DividerItemDecoration(context,
                 DividerItemDecoration.VERTICAL));
-        recyclerView.setAdapter(new ProjectRecyclerViewAdapter(projects));
+        recyclerView.setAdapter(new DiaryRecyclerViewAdapter(projects));
         return view;
     }
 

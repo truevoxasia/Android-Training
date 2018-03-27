@@ -10,12 +10,12 @@ import java.util.List;
 
 import asia.dattel.androidtraining.entity.Project;
 
-public class ProjectRecyclerViewAdapter extends RecyclerView.Adapter<ProjectRecyclerViewAdapter.ViewHolder> {
+public class DiaryRecyclerViewAdapter extends RecyclerView.Adapter<DiaryRecyclerViewAdapter.ViewHolder> {
 
     private final List<Project> mValues;
 
 
-    public ProjectRecyclerViewAdapter(List<Project> projects) {
+    public DiaryRecyclerViewAdapter(List<Project> projects) {
         mValues = projects;
 
     }

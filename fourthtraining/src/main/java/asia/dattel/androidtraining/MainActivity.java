@@ -13,7 +13,8 @@ import android.view.MenuItem;
 import asia.dattel.androidtraining.entity.Project;
 
 public class MainActivity extends AppCompatActivity implements
-        ProjectAddFragment.OnFragmentInteractionListerner {
+        ProjectAddFragment.OnFragmentInteractionListerner,
+        ProjectListFragment.OnFragmentInteractionListener{
 
 
     ViewPager viewPager;
@@ -76,5 +77,13 @@ public class MainActivity extends AppCompatActivity implements
         if (fragment instanceof ProjectListFragment){
             ((ProjectListFragment) fragment).updateList(project);
         }
+    }
+
+    // Todo : Add upload Code here
+    // API : https://android-training-7d330.firebaseio.com/projects.json
+    // Method : POST
+    @Override
+    public void onUploadDataInteraction(Project mItem) {
+
     }
 }

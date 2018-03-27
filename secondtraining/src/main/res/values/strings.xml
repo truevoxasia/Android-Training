@@ -1,12 +1,11 @@
 <resources>
-    <string name="app_name">Android Training</string>
+    <string name="app_name">Diary App</string>
     <string name="action_settings">Settings</string>
-    <string name="projectname">Project Name</string>
-    <string name="code">Code</string>
-    <string name="startdate">Start Date</string>
-    <string name="enddate">End Date</string>
-    <string name="version">Version</string>
+    <string name="title">Title</string>
+    <string name="description">Description</string>
+    <string name="date">Date</string>
     <string name="save">Save</string>
+    <string name="saved">Saved!</string>
     <string name="okay">Okay</string>
-    <string name="fillinthisfield">fill in this field.</string>
+    <string name="fillinthisfield">Fill in this field.</string>
 </resources>

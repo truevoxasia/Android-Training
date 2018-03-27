@@ -14,65 +14,57 @@
         android:layout_height="match_parent">
 
         <LinearLayout
-            android:padding="16dp"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:orientation="vertical">
 
-            <com.app.infideap.stylishwidget.view.AEditText
-                android:id="@+id/editText_project_name"
-                style="@style/EditText.RoundBorder"
-                android:layout_width="wrap_content"
+            <EditText
+                android:paddingLeft="32dp"
+                android:paddingTop="16dp"
+                android:paddingBottom="24dp"
+                android:paddingRight="32dp"
+                android:layout_marginLeft="-9dp"
+                android:layout_marginRight="-9dp"
+                android:id="@+id/editText_title"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ems="15"
-                android:hint="@string/projectname"
-                android:maxEms="1" />
+                android:hint="@string/title"/>
 
-            <com.app.infideap.stylishwidget.view.AEditText
-                android:id="@+id/editText_code"
-                style="@style/EditText.RoundBorder"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="15"
-                android:hint="@string/code"
-                android:maxEms="1" />
 
-            <com.app.infideap.stylishwidget.view.AEditText
-                android:id="@+id/editText_start_date"
-                style="@style/EditText.RoundBorder"
-                android:layout_width="wrap_content"
+            <EditText
+                android:id="@+id/editText_date"
+                android:paddingLeft="32dp"
+                android:paddingTop="16dp"
+                android:paddingBottom="24dp"
+                android:paddingRight="32dp"
+                android:layout_marginLeft="-9dp"
+                android:layout_marginRight="-9dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ems="15"
-                android:hint="@string/startdate"
-                android:inputType="datetime"
-                android:maxEms="1" />
+                android:hint="@string/date"
+                android:inputType="datetime" />
 
-            <com.app.infideap.stylishwidget.view.AEditText
-                android:id="@+id/editText_end_date"
-                style="@style/EditText.RoundBorder"
-                android:layout_width="wrap_content"
+            <EditText
+                android:id="@+id/editText_description"
+                android:paddingLeft="32dp"
+                android:paddingTop="16dp"
+                android:paddingBottom="24dp"
+                android:paddingRight="32dp"
+                android:layout_marginLeft="-9dp"
+                android:layout_marginRight="-9dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="15"
-                android:hint="@string/enddate"
-                android:inputType="datetime"
-                android:maxEms="1" />
-
-            <com.app.infideap.stylishwidget.view.AEditText
-                android:id="@+id/editText_version"
-                style="@style/EditText.RoundBorder"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="15"
-                android:hint="@string/version"
-                android:maxEms="1" />
+                android:background="#ffff"
+                android:hint="@string/description"/>
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 
-    <com.app.infideap.stylishwidget.view.AButton
+    <Button
         android:id="@+id/button_save"
         android:text="@string/save"
-        style="@style/Button.Success.Fill"
+        style="@style/Button.Accent.Fill"
         android:layout_width="match_parent"
         android:layout_alignParentBottom="true"
         android:layout_height="wrap_content" />
