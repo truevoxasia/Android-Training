@@ -40,15 +40,13 @@
                 android:inputType="datetime"
                 android:maxEms="1" />
 
-
-
             <EditText
-                android:id="@+id/editText_content"
+                android:id="@+id/editText_description"
                 style="@style/EditText.RoundBorder"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="15"
-                android:hint="@string/code"
+                android:hint="@string/description"
                 android:maxEms="1" />
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>

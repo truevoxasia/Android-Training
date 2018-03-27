@@ -17,13 +17,10 @@ import java.util.Locale;
 public class MainActivity extends AppCompatActivity {
 
     private Calendar startDateCalendar = Calendar.getInstance();
-    private Calendar endDateCalendar = Calendar.getInstance();
 
-    private EditText projectEditText;
-    private EditText codeEditText;
-    private EditText startDateEditText;
-    private EditText endDateEditText;
-    private EditText versionEditText;
+    private EditText titleEditText;
+    private EditText descriptionEditText;
+    private EditText dateEditText;
     private Button saveButton;
 
     @Override
@@ -45,63 +42,67 @@ public class MainActivity extends AppCompatActivity {
                 if (!isAllFill()) {
                     return;
                 }
-                new AlertDialog.Builder(MainActivity.this)
-                        .setMessage(
-                                String.format(
-                                        Locale.getDefault(),
-                                        "Project Name : %s\n" +
-                                                "Code : %s\n" +
-                                                "Start Date : %s\n" +
-                                                "End Date : %s\n" +
-                                                "Version : %s",
-                                        projectEditText.getText().toString(),
-                                        codeEditText.getText().toString(),
-                                        startDateEditText.getText().toString(),
-                                        endDateEditText.getText().toString(),
-                                        versionEditText.getText().toString()
-                                )
-                        )
-                        .setPositiveButton(R.string.okay, null)
-                        .create().show();
+                storeIntoDb();
             }
         });
     }
 
-    private boolean isAllFill() {
-        isEmpty(projectEditText);
-        isEmpty(codeEditText);
-        isEmpty(startDateEditText);
-        isEmpty(endDateEditText);
-        isEmpty(versionEditText);
+    //Todo : Add storing data code here
+    private void storeIntoDb() {
 
-        return !projectEditText.getText().toString().isEmpty()
-                && !codeEditText.getText().toString().isEmpty()
-                && !startDateEditText.getText().toString().isEmpty()
-                && !endDateEditText.getText().toString().isEmpty()
-                && !versionEditText.getText().toString().isEmpty()
-                ;
+
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.saved)
+                .setMessage(
+                        String.format(
+                                Locale.getDefault(),
+                                "Title : %s\n" +
+                                        "Date : %s\n" +
+                                        "Description : %s",
+                                titleEditText.getText().toString(),
+                                dateEditText.getText().toString(),
+                                descriptionEditText.getText().toString()
+                        )
+                )
+                .setPositiveButton(R.string.okay, null)
+                .create().show();
+        clearAllField();
+
+
+    }
+
+    //Todo : Add reset field code here
+    private void clearAllField() {
+
+    }
+
+    private boolean isAllFill() {
+        isEmpty(titleEditText);
+        isEmpty(descriptionEditText);
+        isEmpty(dateEditText);
+
+        return !titleEditText.getText().toString().isEmpty()
+                && !descriptionEditText.getText().toString().isEmpty()
+                && !dateEditText.getText().toString().isEmpty();
     }
 
     private void isEmpty(EditText editText) {
-        if(editText.getText().toString().isEmpty())
+        if (editText.getText().toString().isEmpty())
             editText.setError(getString(R.string.fillinthisfield));
 
     }
 
     private void initialize() {
-        projectEditText = findViewById(R.id.editText_project_name);
-        codeEditText = findViewById(R.id.editText_code);
-        startDateEditText = findViewById(R.id.editText_start_date);
-        endDateEditText = findViewById(R.id.editText_end_date);
-        versionEditText = findViewById(R.id.editText_version);
+        titleEditText = findViewById(R.id.editText_title);
+        descriptionEditText = findViewById(R.id.editText_description);
+        dateEditText = findViewById(R.id.editText_date);
 
         saveButton = findViewById(R.id.button_save);
     }
 
     private void setupDatePickerInput() {
 
-        addDatePickerInteraction(startDateCalendar, startDateEditText);
-        addDatePickerInteraction(endDateCalendar, endDateEditText);
+        addDatePickerInteraction(startDateCalendar, dateEditText);
 
     }
 
