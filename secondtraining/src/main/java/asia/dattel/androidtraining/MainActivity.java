@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -108,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void addDatePickerInteraction(final Calendar calendar, final EditText editText) {
 
-        editText.setFocusable(false);
+        editText.setInputType(InputType.TYPE_NULL);
         editText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -123,6 +124,13 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH)
                 ).show();
+            }
+        });
+        editText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                if (b)
+                    editText.performClick();
             }
         });
     }

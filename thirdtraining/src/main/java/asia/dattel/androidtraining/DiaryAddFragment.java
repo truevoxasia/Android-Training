@@ -22,7 +22,7 @@ import java.util.Locale;
 import asia.dattel.androidtraining.entity.DaoSession;
 import asia.dattel.androidtraining.entity.Project;
 
-public class ProjectAddFragment extends Fragment {
+public class DiaryAddFragment extends Fragment {
 
     private Calendar startDateCalendar = Calendar.getInstance();
     private Calendar endDateCalendar = Calendar.getInstance();
@@ -37,12 +37,12 @@ public class ProjectAddFragment extends Fragment {
     private DaoSession session;
     private OnFragmentInteractionListerner mListener;
 
-    public ProjectAddFragment() {
+    public DiaryAddFragment() {
     }
 
 
-    public static ProjectAddFragment newInstance() {
-        return new ProjectAddFragment();
+    public static DiaryAddFragment newInstance() {
+        return new DiaryAddFragment();
     }
 
 

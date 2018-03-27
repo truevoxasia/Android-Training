@@ -64,7 +64,7 @@
     <Button
         android:id="@+id/button_save"
         android:text="@string/save"
-        style="@style/Button.Success.Fill"
+        style="@style/Button.Accent.Fill"
         android:layout_width="match_parent"
         android:layout_alignParentBottom="true"
         android:layout_height="wrap_content" />
