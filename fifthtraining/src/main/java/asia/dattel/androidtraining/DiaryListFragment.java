@@ -38,7 +38,7 @@ public class DiaryListFragment extends Fragment {
         recyclerView = (RecyclerView) view;
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
 
-        diaries = session.getProjectDao().queryBuilder().orderDesc(
+        diaries = session.getDiaryDao().queryBuilder().orderDesc(
                 ProjectDao.Properties.ProjectId
         ).list();
         recyclerView.addItemDecoration(new DividerItemDecoration(context,

@@ -1,9 +1,8 @@
 <resources>
-    <string name="app_name">Android Training</string>
+    <string name="app_name">Diary App</string>
     <string name="action_settings">Settings</string>
     <string name="title">Title</string>
-    <string name="description">Code</string>
+    <string name="description">Description</string>
     <string name="date">Date</string>
-    <string name="version">Version</string>
     <string name="save">Save</string>
 </resources>

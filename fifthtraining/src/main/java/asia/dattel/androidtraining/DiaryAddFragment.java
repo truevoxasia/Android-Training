@@ -101,7 +101,7 @@ public class DiaryAddFragment extends Fragment {
         diary.endDate = endDateEditText.getText().toString();
         diary.version = Long.parseLong(versionEditText.getText().toString());
 
-        if (session.getProjectDao().insert(diary) != -1) {
+        if (session.getDiaryDao().insert(diary) != -1) {
 
             mListener.onProjectAddInteraction(diary);
             new AlertDialog.Builder(getContext())

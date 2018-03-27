@@ -14,42 +14,49 @@
         android:layout_height="match_parent">
 
         <LinearLayout
-            android:padding="16dp"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:orientation="vertical">
-
             <EditText
+                android:paddingLeft="32dp"
+                android:paddingTop="16dp"
+                android:paddingBottom="24dp"
+                android:paddingRight="32dp"
+                android:layout_marginLeft="-9dp"
+                android:layout_marginRight="-9dp"
                 android:id="@+id/editText_title"
-                style="@style/EditText.RoundBorder"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ems="15"
-                android:hint="@string/title"
-                android:maxEms="1" />
+                android:hint="@string/title"/>
 
 
             <EditText
                 android:id="@+id/editText_date"
-                style="@style/EditText.RoundBorder"
-                android:layout_width="wrap_content"
+                android:paddingLeft="32dp"
+                android:paddingTop="16dp"
+                android:paddingBottom="24dp"
+                android:paddingRight="32dp"
+                android:layout_marginLeft="-9dp"
+                android:layout_marginRight="-9dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ems="15"
                 android:hint="@string/date"
-                android:inputType="datetime"
-                android:maxEms="1" />
-
-
+                android:inputType="datetime" />
 
             <EditText
                 android:id="@+id/editText_description"
-                style="@style/EditText.RoundBorder"
-                android:layout_width="wrap_content"
+                android:paddingLeft="32dp"
+                android:paddingTop="16dp"
+                android:paddingBottom="24dp"
+                android:paddingRight="32dp"
+                android:layout_marginLeft="-9dp"
+                android:layout_marginRight="-9dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="15"
-                android:hint="@string/description"
-                android:maxEms="1" />
+                android:background="#ffff"
+                android:hint="@string/description"/>
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 
